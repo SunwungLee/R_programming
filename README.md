@@ -1,6 +1,6 @@
 # R programming
 ## at Youngwoo Global Learning
-## with Nambeom Kim 
+## by Nambeom Kim 
 
 R 프로그래밍 언어의 기본을 익히는데 목적이있다.
 
