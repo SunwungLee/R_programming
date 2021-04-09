@@ -1,0 +1,11 @@
+서울 열린데이터 광장
+https://data.seoul.go.kr/index.do
+
+1. 서울특별시 작은도서관 현황정보
+http://data.seoul.go.kr/dataList/OA-15481/S/1/datasetView.do
+
+2. 서울특별시 응급실 위치 정보
+http://data.seoul.go.kr/dataList/OA-20338/S/1/datasetView.do
+
+3. 서울특별시 미용업 인허가 정보
+http://data.seoul.go.kr/dataList/OA-16063/S/1/datasetView.do
