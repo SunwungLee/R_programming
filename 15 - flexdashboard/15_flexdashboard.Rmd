@@ -1,0 +1,67 @@
+---
+title: "flexdashboard_example"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(DT)
+library(leaflet)
+library(leaflet.extras)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+## ggplot, scatter
+p <- faithful %>% 
+  ggplot(aes(x = eruptions, y = waiting)) +
+  geom_point(size = 3, alpha = 0.6) +
+  xlim(0, 6) + ylim(20, 110)
+
+p + geom_density_2d(size = 0.25,
+                    color = 'red')
+
+```
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Heatmap
+
+```{r}
+#head(quakes)
+mean_lng <- mean(quakes$long)
+mean_lat <- mean(quakes$lat)
+
+quakes %>% 
+  leaflet() %>% 
+  addProviderTiles(providers$OpenStreetMap) %>% 
+  setView(lng = mean_lng,
+          lat = mean_lat,
+          zoom = 5) %>% 
+  addHeatmap(lng = ~long, lat = ~lat,
+             intensity = ~mag,  # magnitute에 대해서 그림
+             radius = 10, # trial and error 방식으로 radius 정리
+             max = 10, # maximum intensity
+             blur = 20
+             )
+```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Faithful table
+
+```{r}
+DT::datatable(faithful)
+```
+
+
